@@ -1,4 +1,4 @@
-def classifiers(x, N, M): #input NxM image(2d aray [N][M]) x, output length 6 feature array
+def features(x, N, M): #input NxM image(2d aray [N][M]) x, output length 6 feature array
     # 1)
     Density = sum(x)/(N*M)
     # 2)
