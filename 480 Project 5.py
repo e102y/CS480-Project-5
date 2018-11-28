@@ -72,13 +72,11 @@ class MultiPerceptron:
                   [(((r.random()*2)-1)/10),(((r.random()*2)-1)/10),(((r.random()*2)-1)/10),(((r.random()*2)-1)/10),(((r.random()*2)-1)/10),(((r.random()*2)-1)/10),(((r.random()*2)-1)/10)],#7
                   [(((r.random()*2)-1)/10),(((r.random()*2)-1)/10),(((r.random()*2)-1)/10),(((r.random()*2)-1)/10),(((r.random()*2)-1)/10),(((r.random()*2)-1)/10),(((r.random()*2)-1)/10)],#8
                   [(((r.random()*2)-1)/10),(((r.random()*2)-1)/10),(((r.random()*2)-1)/10),(((r.random()*2)-1)/10),(((r.random()*2)-1)/10),(((r.random()*2)-1)/10),(((r.random()*2)-1)/10)]]#9
-    def pTrain(self, inp, L, O, n ): #where L is [0,9]
-        if(O == L):
-            for a in range(len(self.W[L])):
-                self.W[L][a] = self.W[L][a] + n*inp[a]
-        else:
-            for a in range(len(self.W[L])):
-                self.W[L][a] = self.W[L][a] - n*inp[a]
+    def pTrain(self, inp, L, O, n ): #where L is the label[0,9], O is the label the neuron guessed, inp is the input, n is eta
+        for a in range(len(self.W[L])):
+            self.W[L][a] = self.W[L][a] + n*inp[a]
+        for a in range(len(self.W[L])):
+            self.W[O][a] = self.W[O][a] - n*inp[a]
     def pProcess(self, x):
         tomp = []
         for a in range(len(self.W)):
