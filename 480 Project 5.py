@@ -43,8 +43,8 @@ def features(x, N, M): #input NxM image(2d aray [N][M]) x, output length 6 featu
     maxInterVert = max(Rows)
     # 6)
     aveInterVert = sum(Rows)/len(Rows)
-    return [Density, DOFS, maxInterHoriz, aveInterHoriz, maxInterVert, aveInterVert]
-    #order: [Density, Degree/Measure of Symettry, maximum horizontal intersections, average horizntal intersections, maximum vertical intersections, average vertical intersections]
+    return [0, Density, DOFS, maxInterHoriz, aveInterHoriz, maxInterVert, aveInterVert]
+    #order: [Bias, Density, Degree/Measure of Symettry, maximum horizontal intersections, average horizntal intersections, maximum vertical intersections, average vertical intersections]
 
 class Perceptron:
     def __init__(self):
